@@ -1,0 +1,3 @@
+package ru.metro.objmodels.client;
+import java.awt.image.BufferedImage;import java.io.File;import javax.imageio.ImageIO;import java.util.HashSet;import java.util.Set;import net.minecraft.client.Minecraft;import net.minecraft.client.renderer.texture.DynamicTexture;import net.minecraft.util.ResourceLocation;
+final class MinecraftTextures {private static final Set<ResourceLocation> loaded=new HashSet<>();static boolean has(ResourceLocation r){return loaded.contains(r);}static void load(ResourceLocation r,File f)throws Exception{BufferedImage image=ImageIO.read(f);if(image!=null){Minecraft.getMinecraft().getTextureManager().loadTexture(r,new DynamicTexture(image));loaded.add(r);}}}

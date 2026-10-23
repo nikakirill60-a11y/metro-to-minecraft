@@ -1,0 +1,3 @@
+package ru.metro.objmodels.client;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;import ru.metro.objmodels.common.*;
+public class ClientProxy extends CommonProxy { @Override public void preInit(FMLPreInitializationEvent e){super.preInit(e);net.minecraftforge.client.model.ModelLoader.setCustomModelResourceLocation(ModelItem.INSTANCE,0,new net.minecraft.client.renderer.block.model.ModelResourceLocation("objmodels:model_tool","inventory"));RenderingRegistry.registerEntityRenderingHandler(PlacedModelEntity.class, RenderPlacedModel::new);} }
